@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-solo-chat';
+
+  chatCount: Array<number> = [1, 2];
+
+  AddChat() : void {
+    this.chatCount.push(this.chatCount.length + 1);
+  }
+
 }

@@ -1,0 +1,14 @@
+<div class="chat-container">
+  <div class="history-container" #historyContainer>
+    <div class="chat-message" *ngFor="let chatMessage of chatHistory.reverse()" [class.self]="chatMessage.author == this.id">
+      <span class="author">Author: {{ chatMessage.author }}</span>
+      <span class="message">{{ chatMessage.message }}</span>
+    </div>
+  </div>
+  <div class="chat-send-message">
+    <mat-form-field class="message">
+      <input [(ngModel)]="message" matInput placeholder="Write Message" autocomplete="off">
+    </mat-form-field>
+    <button (click)="sendMessage()" mat-flat-button color="primary">Send</button>
+  </div>
+</div>
